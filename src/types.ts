@@ -1,3 +1,6 @@
+import { AnyAction } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
+
 export type News = {
   id: number,
   tipo: string,
@@ -21,3 +24,11 @@ export type News = {
   destaque: boolean,
   link: string,
 };
+
+export type NewsArray = News[];
+
+export type ReduxState = {
+  news: News[],
+};
+
+export type Dispatch = ThunkDispatch<ReduxState, null, AnyAction>;
