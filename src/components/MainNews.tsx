@@ -9,6 +9,46 @@ type MainNewsProps = {
 
 const StyledMainNews = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px 0;
+`;
+
+const StyledMainNewsImg = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-basis: 450px;
+`;
+
+const MainNewsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  flex-basis: 450px;
+`;
+
+const MainNewsHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const MainNewsFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const MainNewsAlert = styled.p`
+  color: red;
+  font-size: 0.7rem;
+`;
+
+const MainNewsText = styled.p`
+  color: #333;
+  font-size: 0.8rem;
 `;
 
 function MainNews({ news }: MainNewsProps) {
@@ -18,15 +58,21 @@ function MainNews({ news }: MainNewsProps) {
 
   return (
     <StyledMainNews>
-      <img src={ imgURL } alt={ news.titulo } />
       <div>
-        <p>Notícia mais recente</p>
-        <MdFavoriteBorder />
-        <h3>{news.titulo}</h3>
-        <p>{news.introducao}</p>
-        <p>{news.data_publicacao}</p>
-        <ReadNewsButton link={ news.link } />
+        <StyledMainNewsImg src={ imgURL } alt={ news.titulo } />
       </div>
+      <MainNewsContainer>
+        <MainNewsHeader>
+          <MainNewsAlert>Notícia mais recente</MainNewsAlert>
+          <MdFavoriteBorder />
+        </MainNewsHeader>
+        <h3>{news.titulo}</h3>
+        <MainNewsText>{news.introducao}</MainNewsText>
+        <MainNewsFooter>
+          <MainNewsText>{news.data_publicacao}</MainNewsText>
+          <ReadNewsButton link={ news.link } />
+        </MainNewsFooter>
+      </MainNewsContainer>
     </StyledMainNews>
   );
 }

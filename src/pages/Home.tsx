@@ -9,7 +9,6 @@ import { ReduxState } from '../types';
 function Home() {
   const dispatch = useDispatch();
   const allNews = useSelector((state: ReduxState) => state.news);
-  console.log(allNews);
 
   useEffect(() => {
     dispatch(fetchNewsFromAPI() as unknown as AnyAction);
