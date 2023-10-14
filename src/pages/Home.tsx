@@ -1,14 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { AnyAction } from 'redux';
 import { useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import { fetchNewsFromAPI } from '../redux/actions/newsAction';
 import MainNews from '../components/MainNews';
-import { ReduxState } from '../types';
+import NewsNavigation from '../components/NewsNavigation';
 
 function Home() {
   const dispatch = useDispatch();
-  const allNews = useSelector((state: ReduxState) => state.news);
 
   useEffect(() => {
     dispatch(fetchNewsFromAPI() as unknown as AnyAction);
@@ -17,7 +17,9 @@ function Home() {
   return (
     <>
       <Header />
-      <MainNews news={ allNews[0] } />
+      <MainNews />
+      <NewsNavigation />
+      <Outlet />
     </>
   );
 }

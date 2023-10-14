@@ -1,11 +1,8 @@
-import { MdFavoriteBorder } from 'react-icons/md';
 import styled from 'styled-components';
-import { News } from '../types';
+import { useSelector } from 'react-redux';
+import { ReduxState } from '../types';
 import ReadNewsButton from './ReadNewsButton';
-
-type MainNewsProps = {
-  news: News;
-};
+import FavoriteButton from './FavoriteButton';
 
 const StyledMainNews = styled.div`
   display: flex;
@@ -51,26 +48,27 @@ const MainNewsText = styled.p`
   font-size: 0.8rem;
 `;
 
-function MainNews({ news }: MainNewsProps) {
-  const imgURL = news && `https://agenciadenoticias.ibge.gov.br/${JSON.parse(news.imagens).image_intro}`;
+function MainNews() {
+  const mainNews = useSelector((state: ReduxState) => state.news[0]);
+  const imgURL = mainNews && `https://agenciadenoticias.ibge.gov.br/${JSON.parse(mainNews.imagens).image_intro}`;
 
-  if (!news) return <p>Carregando...</p>;
+  if (!mainNews) return <p>Carregando...</p>;
 
   return (
     <StyledMainNews>
       <div>
-        <StyledMainNewsImg src={ imgURL } alt={ news.titulo } />
+        <StyledMainNewsImg src={ imgURL } alt={ mainNews.titulo } />
       </div>
       <MainNewsContainer>
         <MainNewsHeader>
           <MainNewsAlert>Notícia mais recente</MainNewsAlert>
-          <MdFavoriteBorder />
+          <FavoriteButton />
         </MainNewsHeader>
-        <h3>{news.titulo}</h3>
-        <MainNewsText>{news.introducao}</MainNewsText>
+        <h3>{mainNews.titulo}</h3>
+        <MainNewsText>{mainNews.introducao}</MainNewsText>
         <MainNewsFooter>
-          <MainNewsText>{news.data_publicacao}</MainNewsText>
-          <ReadNewsButton link={ news.link } />
+          <MainNewsText>{mainNews.data_publicacao}</MainNewsText>
+          <ReadNewsButton link={ mainNews.link } />
         </MainNewsFooter>
       </MainNewsContainer>
     </StyledMainNews>
