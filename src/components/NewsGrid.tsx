@@ -53,9 +53,13 @@ function NewsGrid() {
           ))
       }
       </StyledNewsGrid>
-      <button onClick={ handleMoreNewsClick }>
-        Mais Notícias
-      </button>
+      {
+        newsQuantity >= allNews.length ? null : (
+          <button onClick={ handleMoreNewsClick }>
+            Mais Notícias
+          </button>
+        )
+      }
     </>
   );
 }
