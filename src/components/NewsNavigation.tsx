@@ -24,12 +24,12 @@ const StyledNavLink = styled(NavLink)`
 
 function NewsNavigation() {
   return (
-    <>
+    <nav>
       <StyledNavLink to="/">Mais Recentes</StyledNavLink>
       <StyledNavLink to="/release">Release</StyledNavLink>
       <StyledNavLink to="/noticias">Notícias</StyledNavLink>
       <StyledNavLink to="/favoritas">Favoritas</StyledNavLink>
-    </>
+    </nav>
   );
 }
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import Title from './Title';
 
-const StyledHeader = styled.div`
+const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.bgSecondary};
   color: ${({ theme }) => theme.colors.white};
   padding: 10px;

@@ -19,7 +19,7 @@ function NewsGrid() {
   };
 
   return (
-    <>
+    <main>
       {
         allNews
           .filter((news) => {
@@ -41,7 +41,7 @@ function NewsGrid() {
       <button onClick={ handleMoreNewsClick }>
         Mais Notícias
       </button>
-    </>
+    </main>
   );
 }
 

@@ -4,7 +4,7 @@ import { ReduxState } from '../types';
 import ReadNewsButton from './ReadNewsButton';
 import FavoriteButton from './FavoriteButton';
 
-const StyledMainNews = styled.div`
+const StyledMainNews = styled.aside`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
