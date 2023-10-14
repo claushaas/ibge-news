@@ -20,6 +20,7 @@ export type NewsArray = News[];
 
 export type ReduxState = {
   news: News[],
+  favorites: number[],
 };
 
 export type Dispatch = ThunkDispatch<ReduxState, null, AnyAction>;

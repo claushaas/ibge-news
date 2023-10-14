@@ -31,7 +31,7 @@ function NewsCard({ news }: NewsCardProps) {
         <NewsPublicationDate date={ news.data_publicacao } />
         <ReadNewsButton link={ news.link } />
       </NewsCardFooter>
-      <FavoriteButton />
+      <FavoriteButton id={ news.id } />
     </StyledNewsCard>
   );
 }

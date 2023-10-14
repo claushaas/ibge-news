@@ -1,5 +1,4 @@
-const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-
-const isFavorite = (id: number) => favorites.includes(id);
+const isFavorite = (id: number) => JSON.parse(localStorage.getItem('favorites') || '[]')
+  .includes(id);
 
 export default isFavorite;

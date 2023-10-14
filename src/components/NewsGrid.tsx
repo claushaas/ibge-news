@@ -45,7 +45,10 @@ function NewsGrid() {
                 return true;
             }
           })
-          .slice(1, newsQuantity).map((news) => (
+          .slice(
+            1,
+            newsQuantity,
+          ).map((news) => (
             <NewsCard key={ news.id } news={ news } />
           ))
       }

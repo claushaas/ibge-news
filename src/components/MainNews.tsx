@@ -63,7 +63,7 @@ function MainNews() {
       <MainNewsContainer>
         <MainNewsHeader>
           <MainNewsAlert>Notícia mais recente</MainNewsAlert>
-          <FavoriteButton />
+          <FavoriteButton id={ mainNews.id } />
         </MainNewsHeader>
         <h3>{mainNews.titulo}</h3>
         <MainNewsText>{mainNews.introducao}</MainNewsText>
