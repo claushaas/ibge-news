@@ -4,7 +4,11 @@ import { useEffect, useState } from 'react';
 import { ReduxState } from '../types';
 import NewsCard from './NewsCard';
 import isFavorite from '../utils/isFavorite';
-import { StyledNewsGrid } from '../styles/styles';
+import {
+  StyledNewsGrid,
+  MoreNewsButton,
+  MoreNewsButtonContainer,
+} from '../styles/styles';
 
 function NewsGrid() {
   const [newsQuantity, setNewsQuantity] = useState(10);
@@ -46,9 +50,11 @@ function NewsGrid() {
       </StyledNewsGrid>
       {
         newsQuantity >= allNews.length ? null : (
-          <button onClick={ handleMoreNewsClick }>
-            Mais Notícias
-          </button>
+          <MoreNewsButtonContainer>
+            <MoreNewsButton onClick={ handleMoreNewsClick }>
+              Mais Notícias
+            </MoreNewsButton>
+          </MoreNewsButtonContainer>
         )
       }
     </>

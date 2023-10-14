@@ -1,5 +1,6 @@
 import { MdFavoriteBorder, MdFavorite } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
+import { StyledFavoriteButtonEmpty, StyledFavoriteButtonFull } from '../styles/styles';
 
 type FavoriteButtonProps = {
   id: number;
@@ -33,16 +34,16 @@ function FavoriteButton({ id }: FavoriteButtonProps) {
 
   if (!isFavoriteNews) {
     return (
-      <button onClick={ handleFavoriteClick }>
+      <StyledFavoriteButtonEmpty onClick={ handleFavoriteClick }>
         <MdFavoriteBorder />
-      </button>
+      </StyledFavoriteButtonEmpty>
     );
   }
 
   return (
-    <button onClick={ handleFavoriteClick }>
+    <StyledFavoriteButtonFull onClick={ handleFavoriteClick }>
       <MdFavorite />
-    </button>
+    </StyledFavoriteButtonFull>
   );
 }
 

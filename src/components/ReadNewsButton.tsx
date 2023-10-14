@@ -1,3 +1,5 @@
+import { StyledReadNewsButton } from '../styles/styles';
+
 type ReadNewsButtonProps = {
   link: string;
 };
@@ -5,7 +7,7 @@ type ReadNewsButtonProps = {
 function ReadNewsButton({ link }: ReadNewsButtonProps) {
   return (
     <a href={ link } target="_blank" rel="noreferrer">
-      <button>Leia a notícia aqui</button>
+      <StyledReadNewsButton>Leia a notícia aqui</StyledReadNewsButton>
     </a>
   );
 }

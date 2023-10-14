@@ -1,28 +1,16 @@
-import styled from 'styled-components';
 import { News } from '../types';
 import FavoriteButton from './FavoriteButton';
 import ReadNewsButton from './ReadNewsButton';
 import NewsPublicationDate from './NewsPublicationDate';
+import {
+  StyledNewsCard,
+  NewsCardFooter,
+  FavoriteButtonContainer,
+} from '../styles/styles';
 
 type NewsCardProps = {
   news: News;
 };
-
-const StyledNewsCard = styled.div`
-  background-color: ${({ theme }) => theme.colors.white};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-  width: 300px;
-  margin: 1rem 0;
-`;
-
-const NewsCardFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
 
 function NewsCard({ news }: NewsCardProps) {
   return (
@@ -33,7 +21,10 @@ function NewsCard({ news }: NewsCardProps) {
         <NewsPublicationDate date={ news.data_publicacao } />
         <ReadNewsButton link={ news.link } />
       </NewsCardFooter>
-      <FavoriteButton id={ news.id } />
+      <FavoriteButtonContainer>
+        <hr />
+        <FavoriteButton id={ news.id } />
+      </FavoriteButtonContainer>
     </StyledNewsCard>
   );
 }

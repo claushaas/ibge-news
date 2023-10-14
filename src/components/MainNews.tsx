@@ -1,53 +1,17 @@
-import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { ReduxState } from '../types';
 import ReadNewsButton from './ReadNewsButton';
 import FavoriteButton from './FavoriteButton';
 import NewsPublicationDate from './NewsPublicationDate';
-
-const StyledMainNews = styled.aside`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 50px 0;
-`;
-
-const StyledMainNewsImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  flex-basis: 450px;
-`;
-
-const MainNewsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-  flex-basis: 450px;
-`;
-
-const MainNewsHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const MainNewsFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const MainNewsAlert = styled.p`
-  color: red;
-  font-size: 0.7rem;
-`;
-
-const MainNewsText = styled.p`
-  color: #333;
-  font-size: 0.8rem;
-`;
+import {
+  StyledMainNews,
+  StyledMainNewsImg,
+  MainNewsContainer,
+  MainNewsHeader,
+  MainNewsFooter,
+  MainNewsAlert,
+  MainNewsText,
+} from '../styles/styles';
 
 function MainNews() {
   const mainNews = useSelector((state: ReduxState) => state.news[0]);
@@ -57,9 +21,7 @@ function MainNews() {
 
   return (
     <StyledMainNews>
-      <div>
-        <StyledMainNewsImg src={ imgURL } alt={ mainNews.titulo } />
-      </div>
+      <StyledMainNewsImg src={ imgURL } alt={ mainNews.titulo } />
       <MainNewsContainer>
         <MainNewsHeader>
           <MainNewsAlert>Notícia mais recente</MainNewsAlert>

@@ -47,6 +47,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 0.8rem;
     margin-bottom: 1rem;
   }
+
+  button {
+    font-family: 'Poppins', sans-serif;
+  }
 `;
 
 export default GlobalStyle;

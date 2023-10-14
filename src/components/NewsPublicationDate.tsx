@@ -1,14 +1,10 @@
 import moment from 'moment';
 import 'moment/dist/locale/pt-br';
-import styled from 'styled-components';
+import { StyledP } from '../styles/styles';
 
 type NewsPublicationDateProps = {
   date: string;
 };
-
-const StyledP = styled.p`
-  margin-bottom: 0;
-`;
 
 function NewsPublicationDate({ date }: NewsPublicationDateProps) {
   moment.locale('pt-br');
