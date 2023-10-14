@@ -4,15 +4,19 @@ import userEvent from '@testing-library/user-event';
 import { applyMiddleware, combineReducers, legacy_createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import counterReducer from '../redux/reducers/counterReducer.ts';
-import { GlobalState } from '../types';
+import { ReduxState } from '../types';
+import newsReducer from '../redux/reducers/newsReducer.ts';
+import favoritesReducer from '../redux/reducers/favoritesReducer.ts';
 
 function renderWithRouterAndRedux(
   component: JSX.Element,
   route: string = '/',
-  state: GlobalState | undefined = undefined,
+  state: ReduxState | undefined = undefined,
   store = legacy_createStore(
-    combineReducers({ counterReducer }),
+    combineReducers({
+      news: newsReducer,
+      favorites: favoritesReducer,
+    }),
     state,
     applyMiddleware(thunk),
   ),
