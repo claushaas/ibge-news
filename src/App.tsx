@@ -1,13 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
-import Initial from './pages/Initial';
-import Counter from './pages/Counter';
-import './App.css';
+import Home from './pages/Home';
+import NewsGrid from './components/NewsGrid';
+import FavoriteNewsGrid from './components/FavoriteNewsGrid';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={ <Initial /> } />
-      <Route path="/counter" element={ <Counter /> } />
+      <Route path="/" element={ <Home /> }>
+        <Route index element={ <NewsGrid /> } />
+        <Route path="release" element={ <NewsGrid /> } />
+        <Route path="noticias" element={ <NewsGrid /> } />
+        <Route path="favoritas" element={ <FavoriteNewsGrid /> } />
+      </Route>
     </Routes>
   );
 }
