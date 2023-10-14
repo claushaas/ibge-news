@@ -1,9 +1,5 @@
-import styled from 'styled-components';
 import logo from '../assets/logo_trybe_news.svg';
-
-const StyledLogo = styled.img`
-  width: 80px;
-`;
+import { StyledLogo } from '../styles/styles';
 
 function Logo() {
   return (

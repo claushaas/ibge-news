@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body {
+    background-color: ${({ theme }) => theme.colors.bgPrimary};
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'IBM Plex Serif', serif;
     font-weight: 600;

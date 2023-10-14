@@ -2,32 +2,30 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledNavLink = styled(NavLink)`
+  color: ${({ theme }) => theme.colors.black};
   text-decoration: none;
-  color: #333;
+  font-family: 'Popins', sans-serif;
   font-size: 0.8rem;
-  padding: 0.5rem;
-  border: 1px solid #333;
-  border-radius: 4px;
   margin: 0 0.5rem;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background-color: #333;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.gray};
   }
 
   &.active {
-    background-color: #333;
-    color: #fff;
+    border-bottom: 1px solid red;
   }
 `;
 
 const StyledNav = styled.nav`
+  background-color: ${({ theme }) => theme.colors.white};
   width: 90%;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  padding: 0.6rem;
 `;
 
 function NewsNavigation() {

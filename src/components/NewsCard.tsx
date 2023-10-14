@@ -9,11 +9,13 @@ type NewsCardProps = {
 };
 
 const StyledNewsCard = styled.div`
+  background-color: ${({ theme }) => theme.colors.white};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
   width: 300px;
+  margin: 1rem 0;
 `;
 
 const NewsCardFooter = styled.div`

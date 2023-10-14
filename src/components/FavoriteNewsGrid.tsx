@@ -1,17 +1,7 @@
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
 import { ReduxState } from '../types';
 import NewsCard from './NewsCard';
-// import isFavorite from '../utils/isFavorite';
-
-const StyledNewsGrid = styled.main`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-`;
+import { StyledNewsGrid } from '../styles/styles';
 
 function NewsGrid() {
   const allNews = useSelector((state: ReduxState) => state.news);
