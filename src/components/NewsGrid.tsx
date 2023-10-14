@@ -1,9 +1,19 @@
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { ReduxState } from '../types';
 import NewsCard from './NewsCard';
 import isFavorite from '../utils/isFavorite';
+
+const StyledNewsGrid = styled.main`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+`;
 
 function NewsGrid() {
   const [newsQuantity, setNewsQuantity] = useState(10);
@@ -19,8 +29,9 @@ function NewsGrid() {
   };
 
   return (
-    <main>
-      {
+    <>
+      <StyledNewsGrid>
+        {
         allNews
           .filter((news) => {
             switch (pathname) {
@@ -38,10 +49,11 @@ function NewsGrid() {
             <NewsCard key={ news.id } news={ news } />
           ))
       }
+      </StyledNewsGrid>
       <button onClick={ handleMoreNewsClick }>
         Mais Notícias
       </button>
-    </main>
+    </>
   );
 }
 

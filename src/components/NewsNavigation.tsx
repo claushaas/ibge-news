@@ -22,14 +22,22 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
+const StyledNav = styled.nav`
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+`;
+
 function NewsNavigation() {
   return (
-    <nav>
+    <StyledNav>
       <StyledNavLink to="/">Mais Recentes</StyledNavLink>
       <StyledNavLink to="/release">Release</StyledNavLink>
       <StyledNavLink to="/noticias">Notícias</StyledNavLink>
       <StyledNavLink to="/favoritas">Favoritas</StyledNavLink>
-    </nav>
+    </StyledNav>
   );
 }
 

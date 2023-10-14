@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: 'IBM Plex Serif', serif;
     font-weight: 600;
+    margin-bottom: 1rem;
   }
 
   h1 {
@@ -39,6 +40,8 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
   }
 `;
 

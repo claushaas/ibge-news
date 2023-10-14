@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { ReduxState } from '../types';
 import ReadNewsButton from './ReadNewsButton';
 import FavoriteButton from './FavoriteButton';
+import NewsPublicationDate from './NewsPublicationDate';
 
 const StyledMainNews = styled.aside`
   display: flex;
@@ -67,7 +68,7 @@ function MainNews() {
         <h3>{mainNews.titulo}</h3>
         <MainNewsText>{mainNews.introducao}</MainNewsText>
         <MainNewsFooter>
-          <MainNewsText>{mainNews.data_publicacao}</MainNewsText>
+          <NewsPublicationDate date={ mainNews.data_publicacao } />
           <ReadNewsButton link={ mainNews.link } />
         </MainNewsFooter>
       </MainNewsContainer>
