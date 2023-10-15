@@ -3,14 +3,18 @@ import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import thunk from 'redux-thunk';
-import { GlobalState } from '../types';
-import counterReducer from '../redux/reducers/counterReducer';
+import { ReduxState } from '../types';
+import newsReducer from '../redux/reducers/newsReducer';
+import favoritesReducer from '../redux/reducers/favoritesReducer';
 
 function renderWithRedux(
   component: JSX.Element,
-  state: GlobalState | undefined = undefined,
+  state: ReduxState | undefined = undefined,
   store = legacy_createStore(
-    combineReducers({ counterReducer }),
+    combineReducers({
+      news: newsReducer,
+      favorites: favoritesReducer,
+    }),
     state,
     applyMiddleware(thunk),
   ),

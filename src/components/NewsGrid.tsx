@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { ReduxState } from '../types';
 import NewsCard from './NewsCard';
-import isFavorite from '../utils/isFavorite';
 import {
   StyledNewsGrid,
   MoreNewsButton,
@@ -34,8 +33,6 @@ function NewsGrid() {
                 return news.tipo === 'Release';
               case '/noticias':
                 return news.tipo === 'Notícia';
-              case '/favoritas':
-                return isFavorite(news.id);
               default:
                 return true;
             }
