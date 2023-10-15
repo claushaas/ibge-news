@@ -26,24 +26,22 @@ function NewsGrid() {
     <>
       <StyledNewsGrid>
         {
-        allNews
-          .filter((news) => {
-            switch (pathname) {
-              case '/release':
-                return news.tipo === 'Release';
-              case '/noticias':
-                return news.tipo === 'Notícia';
-              default:
-                return true;
-            }
-          })
-          .slice(
-            1,
-            newsQuantity,
-          ).map((news) => (
-            <NewsCard key={ news.id } news={ news } />
-          ))
-      }
+          allNews
+            .filter((news) => {
+              switch (pathname) {
+                case '/release':
+                  return news.tipo === 'Release';
+                case '/noticias':
+                  return news.tipo === 'Notícia';
+                default:
+                  return true;
+              }
+            })
+            .slice(1, newsQuantity)
+            .map((news) => (
+              <NewsCard key={ news.id } news={ news } />
+            ))
+        }
       </StyledNewsGrid>
       {
         newsQuantity >= allNews.length ? null : (

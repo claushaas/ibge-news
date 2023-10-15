@@ -240,3 +240,9 @@ export const newsMockData = [
     link: 'http://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/37988-ibge-marca-presenca-na-caravana-federativa-atendendo-prefeitos-secretarios-municipais-e-publico-em-geral.html',
   },
 ];
+
+export const mockForLocalStorage = [
+  38095,
+  37989,
+  37988,
+];

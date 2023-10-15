@@ -14,7 +14,7 @@ type NewsCardProps = {
 
 function NewsCard({ news }: NewsCardProps) {
   return (
-    <StyledNewsCard>
+    <StyledNewsCard data-testid="newsCard">
       <h6>{news.titulo}</h6>
       <p>{news.introducao}</p>
       <NewsCardFooter>

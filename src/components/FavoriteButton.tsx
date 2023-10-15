@@ -17,12 +17,11 @@ function FavoriteButton({ id }: FavoriteButtonProps) {
         'favorites',
         JSON.stringify([...JSON.parse(localStorage.getItem('favorites') || '[]'), id]),
       );
+
       dispatch({ type: 'ADD_FAVORITE', payload: id });
     } else {
       const filteredFavorites = JSON.parse(localStorage.getItem('favorites') || '[]')
-        .filter(
-          (favorite: number) => favorite !== id,
-        );
+        .filter((favorite: number) => favorite !== id);
 
       localStorage.setItem(
         'favorites',
@@ -34,14 +33,20 @@ function FavoriteButton({ id }: FavoriteButtonProps) {
 
   if (!isFavoriteNews) {
     return (
-      <StyledFavoriteButtonEmpty onClick={ handleFavoriteClick }>
+      <StyledFavoriteButtonEmpty
+        data-testid="favoriteButton"
+        onClick={ handleFavoriteClick }
+      >
         <MdFavoriteBorder />
       </StyledFavoriteButtonEmpty>
     );
   }
 
   return (
-    <StyledFavoriteButtonFull onClick={ handleFavoriteClick }>
+    <StyledFavoriteButtonFull
+      data-testid="unfavoriteButton"
+      onClick={ handleFavoriteClick }
+    >
       <MdFavorite />
     </StyledFavoriteButtonFull>
   );
