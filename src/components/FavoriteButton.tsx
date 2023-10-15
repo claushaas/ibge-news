@@ -33,14 +33,20 @@ function FavoriteButton({ id }: FavoriteButtonProps) {
 
   if (!isFavoriteNews) {
     return (
-      <StyledFavoriteButtonEmpty onClick={ handleFavoriteClick }>
+      <StyledFavoriteButtonEmpty
+        data-testid="favoriteButton"
+        onClick={ handleFavoriteClick }
+      >
         <MdFavoriteBorder />
       </StyledFavoriteButtonEmpty>
     );
   }
 
   return (
-    <StyledFavoriteButtonFull onClick={ handleFavoriteClick }>
+    <StyledFavoriteButtonFull
+      data-testid="unfavoriteButton"
+      onClick={ handleFavoriteClick }
+    >
       <MdFavorite />
     </StyledFavoriteButtonFull>
   );
