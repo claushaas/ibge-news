@@ -17,12 +17,11 @@ function FavoriteButton({ id }: FavoriteButtonProps) {
         'favorites',
         JSON.stringify([...JSON.parse(localStorage.getItem('favorites') || '[]'), id]),
       );
+
       dispatch({ type: 'ADD_FAVORITE', payload: id });
     } else {
       const filteredFavorites = JSON.parse(localStorage.getItem('favorites') || '[]')
-        .filter(
-          (favorite: number) => favorite !== id,
-        );
+        .filter((favorite: number) => favorite !== id);
 
       localStorage.setItem(
         'favorites',
